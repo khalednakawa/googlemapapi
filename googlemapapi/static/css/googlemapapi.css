@@ -1,0 +1,14 @@
+h3 {
+    text-align: center;
+      color: #000080;
+}
+
+h4 {
+    text-align: center;
+    color: #black;
+}
+
+
+form , input, .output{
+    text-align: center;
+}

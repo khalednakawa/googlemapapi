@@ -1,0 +1,41 @@
+
+<html lang="en">
+<head>
+{% load static %}
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/googleauto.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/googlemapapi.css' %}">
+
+</head>
+
+<body>
+<h3> Application is calling two APIs</h3>
+<h4> Google MAP AutoComplete API</h4>
+<h4> Google MAP DistanceMatrix API</h4>
+
+
+     <form action="" method="post" class="marginclass">
+         {% csrf_token %}
+         <input id="autocomplete" class="inp1" name="startAdd" type="text" onFocus="geolocate()"
+                           placeholder="StartPoint address">
+         <input id="autocomplete2" class="inp1" name="endAdd" type="text" onFocus="geolocate()"
+                           placeholder="EndPoint address">
+
+
+         <input class="btn btn-success" type="submit" value="Submit" name="address_location">
+     </form>
+
+
+    <!-- Replace the value of the key parameter with your own API key. -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=GOOGLE_API_KEY_HERE&libraries=places&callback=initAutocomplete"
+            async defer></script>
+
+
+    <div class="output">
+    <p> <strong>StartPoint Address: </strong>{{ startpoint }} </p>
+    <p> <strong>EndPoint Address: </strong>{{ endpoint }} </p>
+    <p> <strong> Distance: </strong> {{ actualdistance }} km </p>
+    </div>
+
+</body>
+</html>
